@@ -1,1 +1,4 @@
 name = Browser update
+description = Integrates browser-update.org to notify users if they use an outdated browser.
+core = 6.x
+package = others
