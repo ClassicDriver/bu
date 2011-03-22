@@ -6,13 +6,17 @@ function bu_init() {
 
 function bu_menu() {
   $items = array();
-  $items['admin/config/development/bu'] = array(
+  $items['admin/settings/bu'] = array(
     'title' => 'Browser update',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('bu_admin_settings'),
+    'access arguments' => array('administer browser-update'),
     'file' => 'bu.admin.inc',
     'type' => MENU_NORMAL_ITEM,
   );
   return $items;
 }
 
+function bu_perm() {
+  return array('administer browser-update');
+}
