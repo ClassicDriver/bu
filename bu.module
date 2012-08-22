@@ -2,12 +2,12 @@
 
 function bu_init() {
   drupal_add_js(bu_get_settings(), 'setting');
-  drupal_add_js(drupal_get_path('module', 'bu') . '/bu.js', 'module', 'footer', FALSE, TRUE, FALSE);
+  drupal_add_js(drupal_get_path('module', 'bu') . '/bu.js', array('type' => 'file', 'scope' => 'footer', 'every_page' => TRUE));
 }
 
 function bu_menu() {
   $items = array();
-  $items['admin/settings/bu'] = array(
+  $items['admin/config/services/bu'] = array(
     'title' => 'Browser update',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('bu_admin_settings'),
@@ -18,8 +18,13 @@ function bu_menu() {
   return $items;
 }
 
-function bu_perm() {
-  return array('administer browser-update');
+function bu_permission() {
+  return array(
+    'administer browser-update' => array(
+      'title' => t('Administer Browser-update'),
+      'description' => t('Administer Browser-update settings.'),
+    ),
+  );
 }
 
 function bu_get_settings() {
@@ -40,16 +45,16 @@ function bu_get_settings() {
 function bu_get_versions($browser, $key = NULL) {
   switch ($browser) {
     case 'firefox':
-      $return = array('1', '1.5', '2', '3', '3.5', '3.6', '4');
+      $return = array('3', '3.5', '3.6', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15');
       break;
     case 'ie':
-      $return = array('5.5', '6', '7', '8', '9');
+      $return = array('6', '7', '8', '9');
       break;
     case 'opera':
-      $return = array('10.1', '10.5', '10.6');
+      $return = array('10.1', '10.5', '10.6', '11');
       break;
     case 'safari':
-      $return = array('1', '1.2', '2', '3', '3.2', '4');
+      $return = array('3', '3.2', '4', '5');
       break;
   }
   if ($key) {

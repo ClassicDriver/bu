@@ -1,5 +1,10 @@
 <?php
 
+/**
+* @file
+* The module settings form.
+*/
+
 function bu_admin_settings() {
   $form = array();
 
