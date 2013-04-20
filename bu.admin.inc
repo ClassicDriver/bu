@@ -83,13 +83,13 @@ function bu_admin_settings() {
   else {
     $title = t('Pages');
   }
-  $form['bu_settings']['visibility'] = array(
+  $form['bu_settings']['bu_visibility'] = array(
     '#type' => 'radios',
     '#title' => t('Load Browser update script on specific pages'),
     '#options' => $options,
     '#default_value' => variable_get('bu_visibility', BU_VISIBILITY_NOTLISTED),
   );
-  $form['bu_settings']['pages'] = array(
+  $form['bu_settings']['bu_pages'] = array(
     '#type' => 'textarea',
     '#title' => '<span class="element-invisible">' . $title . '</span>',
     '#default_value' => variable_get('bu_pages', ''),
