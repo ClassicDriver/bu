@@ -24,7 +24,7 @@ function bu_init() {
     // Convert path to lowercase. This allows comparison of the same path
     // with different case. Ex: /Page, /page, /PAGE.
     $pages = drupal_strtolower($pages);
-    if ($visibility < BLOCK_VISIBILITY_PHP) {
+    if ($visibility < BU_VISIBILITY_PHP) {
       // Convert the Drupal path to lowercase
       $path = drupal_strtolower(drupal_get_path_alias($_GET['q']));
       // Compare the lowercase internal and lowercase path alias (if any).
