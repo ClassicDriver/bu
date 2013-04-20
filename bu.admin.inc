@@ -68,5 +68,32 @@ function bu_admin_settings() {
     '#default_value' => variable_get('bu_settings_blank', 0),
   );
 
+  $access = user_access('use PHP for settings');
+  $options = array(
+    BU_VISIBILITY_NOTLISTED => t('All pages except those listed'),
+    BU_VISIBILITY_LISTED => t('Only the listed pages'),
+  );
+  $description = t("Specify pages by using their paths. Enter one path per line. The '*' character is a wildcard. Example paths are %blog for the blog page and %blog-wildcard for every personal blog. %front is the front page.", array('%blog' => 'blog', '%blog-wildcard' => 'blog/*', '%front' => '<front>'));
+
+  if (module_exists('php') && $access) {
+    $options += array(BU_VISIBILITY_PHP => t('Pages on which this PHP code returns <code>TRUE</code> (experts only)'));
+    $title = t('Pages or PHP code');
+    $description .= ' ' . t('If the PHP option is chosen, enter PHP code between %php. Note that executing incorrect PHP code can break your Drupal site.', array('%php' => '<?php ?>'));
+  }
+  else {
+    $title = t('Pages');
+  }
+  $form['bu_settings']['visibility'] = array(
+    '#type' => 'radios',
+    '#title' => t('Load Browser update script on specific pages'),
+    '#options' => $options,
+    '#default_value' => variable_get('bu_visibility', BU_VISIBILITY_NOTLISTED),
+  );
+  $form['bu_settings']['pages'] = array(
+    '#type' => 'textarea',
+    '#title' => '<span class="element-invisible">' . $title . '</span>',
+    '#default_value' => variable_get('bu_pages', ''),
+    '#description' => $description,
+  );
   return system_settings_form($form);
 }
