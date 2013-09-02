@@ -92,7 +92,7 @@ function bu_get_settings() {
 }
 
 function bu_get_versions($browser, $key = NULL) {
-  return $array();
+  $return = array();
 
   switch ($browser) {
     case 'firefox':
