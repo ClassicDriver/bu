@@ -1,4 +1,7 @@
 (function ($) {
+
+
+
 Drupal.behaviors.bu = {
   attach: function(context) {
   	var e = document.createElement("script");
