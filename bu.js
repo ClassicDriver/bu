@@ -16,7 +16,7 @@ Drupal.behaviors.bu = {
 	  text: Drupal.settings.bu['text'],
 	  newwindow: Drupal.settings.bu['blank']
     }
-    e.setAttribute("src", "http://browser-update.org/update.js");
+    e.setAttribute("src", "https://browser-update.org/update.js");
     document.body.appendChild(e);
   }
 }
