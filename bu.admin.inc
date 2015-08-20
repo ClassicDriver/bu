@@ -8,11 +8,7 @@
 function bu_admin_settings() {
   $form = array();
 
-  $form['bu_browsers'] = array(
-    '#type' => 'fieldset',
-    '#title' => 'Browser',
-    '#description' => 'Select browser versions which should be handled as outdated.',
-  );
+
   $form['bu_browsers']['bu_browsers_firefox'] = array(
     '#type' => 'select',
     '#title' => t('Firefox'),
@@ -40,7 +36,7 @@ function bu_admin_settings() {
 
   $form['bu_settings'] = array(
     '#type' => 'fieldset',
-    '#title' => 'Settigns',
+    '#title' => 'Settings',
     '#description' => 'Additional settings to change behavior of browser update script.',
   );
   $form['bu_settings']['bu_settings_text'] = array(
