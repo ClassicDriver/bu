@@ -40,7 +40,7 @@ function bu_admin_settings() {
     '#description' => 'Additional settings to change behavior of browser update script.',
   );
   $form['bu_settings']['bu_settings_text'] = array(
-    '#type' => 'textfield',
+    '#type' => 'textarea',
     '#title' => t('Custom message bar text'),
     '#default_value' => variable_get('bu_settings_text', ''),
   );
