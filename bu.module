@@ -84,6 +84,8 @@ function bu_get_settings() {
       'opera' => (float) bu_get_versions('opera', variable_get('bu_browsers_opera', 2)),
       'safari' => (float) bu_get_versions('safari', variable_get('bu_browsers_safari', 3)),
       'text' => t(variable_get('bu_settings_text', '')),
+      'onshow' => t(variable_get('bu_settings_onshow', '')),
+      'onclick' => t(variable_get('bu_settings_onclick', '')),
       'reminder' => (int) variable_get('bu_settings_reminder', 3),
       'debug' => (bool) variable_get('bu_settings_debug', 0),
       'blank' => (bool) variable_get('bu_settings_blank', 0),
