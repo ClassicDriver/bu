@@ -44,6 +44,16 @@ function bu_admin_settings() {
     '#title' => t('Custom message bar text'),
     '#default_value' => variable_get('bu_settings_text', ''),
   );
+  $form['bu_settings']['bu_settings_onshow'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Custom javascript code to execute onshow'),
+    '#default_value' => variable_get('bu_settings_onshow', ''),
+  );
+  $form['bu_settings']['bu_settings_onclick'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Custom javascript code to execute onclick'),
+    '#default_value' => variable_get('bu_settings_onclick', ''),
+  );
   $form['bu_settings']['bu_settings_reminder'] = array(
     '#type' => 'select',
     '#title' => t('Remind every x hours'),

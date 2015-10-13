@@ -12,6 +12,12 @@
             s: Drupal.settings.bu['safari'],
             n: 10
           },
+          onshow: function(infos){
+            eval(Drupal.settings.bu['onshow']);
+          },
+          onclick: function(infos){
+            eval(Drupal.settings.bu['onclick']);
+          },
           reminder: Drupal.settings.bu['reminder'],
           test: Drupal.settings.bu['debug'],
           text: Drupal.settings.bu['text'],
