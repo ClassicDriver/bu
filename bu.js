@@ -17,7 +17,7 @@
           text: Drupal.settings.bu['text'],
           newwindow: Drupal.settings.bu['blank']
         };
-        e.setAttribute("src", "//browser-update.org/update.js");
+        e.setAttribute("src", "//browser-update.org/update.min.js");
         document.body.appendChild(e);
       }
     }
