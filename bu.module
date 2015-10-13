@@ -86,6 +86,7 @@ function bu_get_settings() {
       'text' => t(variable_get('bu_settings_text', '')),
       'onshow' => t(variable_get('bu_settings_onshow', '')),
       'onclick' => t(variable_get('bu_settings_onclick', '')),
+      'onclose' => t(variable_get('bu_settings_onclose', '')),
       'reminder' => (int) variable_get('bu_settings_reminder', 3),
       'debug' => (bool) variable_get('bu_settings_debug', 0),
       'blank' => (bool) variable_get('bu_settings_blank', 0),

@@ -18,6 +18,9 @@
           onclick: function(infos){
             eval(Drupal.settings.bu['onclick']);
           },
+          onclose: function(infos){
+            eval(Drupal.settings.bu['onclose']);
+          },
           reminder: Drupal.settings.bu['reminder'],
           test: Drupal.settings.bu['debug'],
           text: Drupal.settings.bu['text'],
